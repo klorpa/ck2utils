@@ -4,21 +4,31 @@ import sqlite3
 from ck3parser import rootpath
 from print_time import print_time
 
-checksummed = {'common', 'events', 'history',
-               'map_data', 'gui', 'localization', 'data_binding'}
+checksummed = {
+    "common",
+    "events",
+    "history",
+    "map_data",
+    "gui",
+    "localization",
+    "data_binding",
+}
 
-conflict_free = {Path(p) for p in [
-    'CHANGELOG.md',
-    'descriptor.mod',
-    'LICENSE.md',
-    'notes.txt',
-    'README.md',
-    'thumbnail_long.png',
-    'thumbnail.png',
-    'thumbnailwide.png',
-]}
+conflict_free = {
+    Path(p)
+    for p in [
+        "CHANGELOG.md",
+        "descriptor.mod",
+        "LICENSE.md",
+        "notes.txt",
+        "README.md",
+        "thumbnail_long.png",
+        "thumbnail.png",
+        "thumbnailwide.png",
+    ]
+}
 
-#atm:
+# atm:
 # light works, heavy crashes, apparently because of ibl, though both do have script errors
 # adding bap fixes ibl.
 # removing all non-cmh doesn't fix ibl.
@@ -52,7 +62,7 @@ conflict_free = {Path(p) for p in [
 #   > Game mechanics related to traits
 #   > overall game graphics
 #   > Holdings
-#   > Descisions
+#   > Decisions
 #   > Interface
 #   > Game mechanics
 #   > Mechanics & Interface (culture and faith related)
@@ -67,7 +77,7 @@ conflict_free = {Path(p) for p in [
 #    -> if ABC all in playset, ignore all AB, AC, BC, and ABC conflicts (keep ABx, ACx, BCx, ABCx conflicts)
 #    should i decompose this into two instances of [1]?
 
-# maybe instead just "these 4 mods play nice together" without bothing about whether all 4 are needed or if any subset is also fine? but then we can't generate load order nicely.
+# maybe instead just "these 4 mods play nice together" without bothering about whether all 4 are needed or if any subset is also fine? but then we can't generate load order nicely.
 
 # current mod order: lexicographic on file list (heuristic for 'mod category')
 #    can read tags from db, sort on tags instead. maybe better.
@@ -75,8 +85,9 @@ conflict_free = {Path(p) for p in [
 # or... cosmetic, then mechanical?
 
 
-mod_db_path = Path.home() / \
-    'Documents/Paradox Interactive/Crusader Kings III/launcher-v2.sqlite'
+mod_db_path = (
+    Path.home() / "Documents/Paradox Interactive/Crusader Kings III/launcher-v2.sqlite"
+)
 
 
 @print_time
@@ -85,10 +96,14 @@ def main():
     all_mods = {}
     playsets = defaultdict(set)
     con = sqlite3.connect(mod_db_path)
-    for mod, path in con.execute("SELECT displayName, dirPath FROM mods WHERE status = 'ready_to_play'"):
+    for mod, path in con.execute(
+        "SELECT displayName, dirPath FROM mods WHERE status = 'ready_to_play'"
+    ):
         assert mod not in all_mods
         all_mods[mod] = Path(path)
-    for playset, mod in con.execute("SELECT p.name, m.displayName FROM playsets_mods AS pm JOIN playsets AS p ON pm.playsetId = p.id JOIN mods AS m ON pm.modId = m.id"):
+    for playset, mod in con.execute(
+        "SELECT p.name, m.displayName FROM playsets_mods AS pm JOIN playsets AS p ON pm.playsetId = p.id JOIN mods AS m ON pm.modId = m.id"
+    ):
         if mod in all_mods:
             playsets[playset].add(mod)
     con.close()
@@ -96,7 +111,7 @@ def main():
     files_of_mod = defaultdict(list)
     playset_conflicts = {}
     for mod, mod_path in all_mods.items():
-        for path in mod_path.rglob('*'):
+        for path in mod_path.rglob("*"):
             if path.is_file():
                 file = path.relative_to(mod_path)
                 mods_of_files[file].add(mod)
@@ -110,22 +125,24 @@ def main():
             if len(mods) > 1 and conflict_free.isdisjoint({file, *file.parents}):
                 playset_conflicts[playset][mods].append(file)
 
-    with open(rootpath / 'ck3_mod_conflicts.txt', 'w') as f:
-        print('Checksum-invariant mods:', file=f)
+    with open(rootpath / "ck3_mod_conflicts.txt", "w") as f:
+        print("Checksum-invariant mods:", file=f)
         for mod in sorted(all_mods):
             if mod not in affects_checksum:
-                print(f'\t{mod}', file=f)
+                print(f"\t{mod}", file=f)
         for playset, conflicts in sorted(playset_conflicts.items()):
             print(playset, file=f)
-            for mod in sorted(playsets[playset], key=(lambda m: sorted(files_of_mod[m]))):
-                print(f'\t{mod}', file=f)
+            for mod in sorted(
+                playsets[playset], key=(lambda m: sorted(files_of_mod[m]))
+            ):
+                print(f"\t{mod}", file=f)
             if not conflicts:
-                print('\t<no conflicts>', file=f)
+                print("\t<no conflicts>", file=f)
             for mods, files in sorted(conflicts.items()):
-                print('\t' + '; '.join(sorted(mods)), file=f)
+                print("\t" + "; ".join(sorted(mods)), file=f)
                 for file in sorted(files):
-                    print(f'\t\t{file.as_posix()}', file=f)
+                    print(f"\t\t{file.as_posix()}", file=f)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
