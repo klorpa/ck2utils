@@ -874,6 +874,7 @@ def output_flank_summary(flank):
 @print_time
 def main():
     # neglects religion unit bonuses e.g. reformed tengri
+    # todo neglects culture unit bonuses from static_modifiers.txt !
     parser = SimpleParser()
     parser.moddirs = get_modpath()
     game_data = {}

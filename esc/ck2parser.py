@@ -117,8 +117,8 @@ def get_provinces(parser):
                 continue
             yield number, title, tree
 
-def get_localisation(moddirs=(), basedir=vanilladir, ordered=False):
-    locs = collections.OrderedDict() if ordered else {}
+def get_localisation(moddirs=(), basedir=vanilladir):
+    locs = {}
     for path in files('localisation/*.csv', moddirs, basedir=basedir):
         for row in csv_rows(path):
             if row[0] not in locs:
@@ -824,11 +824,12 @@ class SimpleParser:
         name = toktype('Name') >> String
         string = toktype('String') >> (lambda s: s[1:-1]) >> String
         key = date | number | name | string
+        obj = forward_decl()
         pair = forward_decl()
         if self.strict:
-            obj = kel + many(pair | string | key) + ker >> unarg(Obj)
+            obj.define(kel + many(pair | string | key | obj) + ker >> unarg(Obj))
         else:
-            obj = (kel + many(pair | string | key) +
+            obj.define(kel + many(pair | string | key | obj) +
                    (ker | skip(finished)) >> unarg(Obj))
         pair.define(key + op + (obj | string | key) >> unarg(Pair))
         self.toplevel = many(pair) + skip(finished) >> TopLevel
