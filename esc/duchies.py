@@ -30,7 +30,7 @@ import numpy
 import PIL
 import PIL.Image
 import tabulate
-import ck2parser
+from . import ck2parser
 
 rootpath = ck2parser.rootpath
 
@@ -701,19 +701,19 @@ def check_nomads():
             county_of_name[name] = c
     if crash:
         raise SystemExit()
-    ruler_provs = [county_of_name[name] for name in ruler_prov_names]
-    clan_provs = [c for c in Title.counties() if c not in ruler_provs]
-    holdings = collections.defaultdict(list)
-    for c in ruler_provs:
-        holdings[c.max_holdings].append(c)
-    print('ruler provs: {}'.format(len(ruler_provs)))
-    print('clan provs: {}'.format(len(clan_provs)))
-    print('ruler proportion: {:%}'.format(
-          len(ruler_provs) / (len(ruler_provs) + len(clan_provs))))
-    print('ruler holding frequencies: {}'.format(
-          [(k, len(v)) for k, v in holdings.items()]))
-    wrong = sum((holdings[k] for k in holdings if k < 5), [])
-    print('wrong holdings: {}'.format([c.name for c in wrong]))
+    # ruler_provs = [county_of_name[name] for name in ruler_prov_names]
+    # clan_provs = [c for c in Title.counties() if c not in ruler_provs]
+    # holdings = collections.defaultdict(list)
+    # for c in ruler_provs:
+    #     holdings[c.max_holdings].append(c)
+    # print('ruler provs: {}'.format(len(ruler_provs)))
+    # print('clan provs: {}'.format(len(clan_provs)))
+    # print('ruler proportion: {:%}'.format(
+    #       len(ruler_provs) / (len(ruler_provs) + len(clan_provs))))
+    # print('ruler holding frequencies: {}'.format(
+    #       [(k, len(v)) for k, v in holdings.items()]))
+    # wrong = sum((holdings[k] for k in holdings if k < 5), [])
+    # print('wrong holdings: {}'.format([c.name for c in wrong]))
 
 def format_other_provs_table():
     def rows():

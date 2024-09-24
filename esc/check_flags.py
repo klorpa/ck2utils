@@ -3,8 +3,8 @@
 import hashlib
 from pathlib import Path
 import re
-from ck2parser import rootpath, vanilladir, is_codename, SimpleParser
-from print_time import print_time
+from .ck2parser import rootpath, vanilladir, is_codename, SimpleParser
+from .print_time import print_time
 
 
 @print_time

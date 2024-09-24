@@ -20,10 +20,10 @@ import csv
 import pathlib
 import re
 import sys
-from ck2parser import (rootpath, vanilladir, csv_rows, files, get_religions,
-                       get_province_id_name_map, is_codename, Date, String,
-                       SimpleParser)
-from print_time import print_time
+from .ck2parser import (rootpath, vanilladir, csv_rows, files, get_religions,
+                        get_province_id_name_map, is_codename, Date, String,
+                        SimpleParser)
+from .print_time import print_time
 
 # if true, instead of removing localisation, write out a file listing broken
 # localisations expected to match one of the patterns to be removed

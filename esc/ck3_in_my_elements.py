@@ -10,8 +10,8 @@ import PIL.ImageDraw
 from evol import Population
 import networkx
 import numpy as np
-from ck3parser import rootpath, SimpleParser, csv_rows
-from print_time import print_time
+from .ck3parser import rootpath, SimpleParser, csv_rows
+from .print_time import print_time
 
 
 def read_game_data():

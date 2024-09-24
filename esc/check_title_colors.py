@@ -2,8 +2,8 @@
 
 from collections import defaultdict
 from pathlib import Path
-from ck2parser import rootpath, is_codename, SimpleParser
-from print_time import print_time
+from .ck2parser import rootpath, is_codename, SimpleParser
+from .print_time import print_time
 
 
 @print_time

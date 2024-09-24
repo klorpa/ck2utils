@@ -2,8 +2,8 @@
 
 import numpy as np
 from PIL import Image
-from ck2parser import rootpath, csv_rows, SimpleParser
-from localpaths import eu4dir
+from .ck2parser import rootpath, csv_rows, SimpleParser
+from .localpaths import eu4dir
 
 parser = SimpleParser()
 parser.basedir = eu4dir

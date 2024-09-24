@@ -8,9 +8,9 @@ import matplotlib.cm
 import matplotlib.colors
 import numpy as np
 from PIL import Image, ImageFont, ImageDraw
-from ck2parser import rootpath, csv_rows, SimpleParser
-from localpaths import eu4dir
-from print_time import print_time
+from .ck2parser import rootpath, csv_rows, SimpleParser
+from .localpaths import eu4dir
+from .print_time import print_time
 
 @print_time
 def main():

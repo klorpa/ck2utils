@@ -310,3 +310,7 @@ __pycache__/
 
 # Cake - Uncomment if you are using it
 # tools/
+
+# pixi environments
+.pixi
+*.egg-info

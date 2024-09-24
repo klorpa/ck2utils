@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 import re
-from ck2parser import rootpath, is_codename, get_cultures, Pair, SimpleParser, FullParser
+from .ck2parser import rootpath, is_codename, get_cultures, Pair, SimpleParser, FullParser
 
 new_cultures = ['francien', 'lorrain', 'picard', 'walloon', 'burgundian', 'angevin', 'poitevin', 'bourbon']
 
@@ -13,7 +13,7 @@ def process_title(title_pair):
                 process_title(pair)
         except:
             dbg_p = SimpleParser()
-            print(repr(pair.inline_str(dgb_p)[:80]))
+            print(repr(pair.inline_str(dbg_p)[:80]))
             raise
     try:
         index, b_val = next((i + 1, v.val) for i, (n, v) in enumerate(tree)

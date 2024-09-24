@@ -2,8 +2,8 @@
 
 import collections
 from pathlib import Path
-import ck2parser
-import print_time
+from . import ck2parser
+from . import print_time
 
 
 @print_time.print_time

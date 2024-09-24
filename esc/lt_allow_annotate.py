@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 
 import re
-from ck2parser import rootpath, is_codename, get_cultures, Pair, SimpleParser, FullParser
-import print_time
+from .ck2parser import rootpath, is_codename, get_cultures, Pair, SimpleParser, FullParser
+from . import print_time
 
 FORMAT_ONLY = False
 

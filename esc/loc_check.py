@@ -6,9 +6,9 @@ import pathlib
 import re
 import shutil
 import tempfile
-from ck2parser import (rootpath, vanilladir, csv_rows, files, is_codename,
-                       get_cultures, get_localisation, SimpleParser)
-from print_time import print_time
+from .ck2parser import (rootpath, vanilladir, csv_rows, files, is_codename,
+                        get_cultures, get_localisation, SimpleParser)
+from .print_time import print_time
 
 modpath = rootpath / 'SWMH-BETA/SWMH'
 # modpath = rootpath / 'EMF/EMF'
@@ -58,6 +58,10 @@ def scan_landed_titles(parser, cultures, loc_mod):
 
 @print_time
 def main():
+    # suppress errors
+    province_id = None
+    province_title = None
+
     parser = SimpleParser()
     parser.moddirs = [rootpath / 'SWMH-BETA/SWMH']
     # province_id_mod, province_title_mod = get_province_id(modpath)

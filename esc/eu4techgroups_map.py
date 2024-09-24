@@ -7,9 +7,9 @@ import sys
 import numpy as np
 from PIL import Image
 import spectra
-from ck2parser import rootpath, csv_rows, SimpleParser, Obj
-from localpaths import eu4dir
-from print_time import print_time
+from .ck2parser import rootpath, csv_rows, SimpleParser, Obj
+from .localpaths import eu4dir
+from .print_time import print_time
 
 TECH_GROUP_COLOR = {
     'western': '#ccc000',           'eastern': '#b38000',

@@ -2,8 +2,8 @@
 
 import sys
 from collections.abc import Callable, Container, Iterable, Mapping, Sequence
-import ck3parser
-from print_time import print_time
+from . import ck3parser
+from .print_time import print_time
 
 parser = ck3parser.SimpleParser()
 static_values = ck3parser.static_values(parser)

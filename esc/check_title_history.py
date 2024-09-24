@@ -5,10 +5,10 @@ from collections import defaultdict, namedtuple
 from operator import attrgetter
 from pathlib import Path
 from intervaltree import Interval, IntervalTree
-from ck2parser import (rootpath, vanilladir, is_codename, TopLevel, Number,
+from .ck2parser import (rootpath, vanilladir, is_codename, TopLevel, Number,
                        Pair, Obj, Date as ASTDate, Comment, SimpleParser,
                        FullParser)
-from print_time import print_time
+from .print_time import print_time
 
 CHECK_LIEGE_CONSISTENCY = True
 

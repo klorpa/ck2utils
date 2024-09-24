@@ -4,9 +4,9 @@ from collections import defaultdict, OrderedDict
 import re
 import numpy as np
 from PIL import Image
-from ck2parser import rootpath, csv_rows, SimpleParser, Pair, Obj
-from localpaths import eu4dir
-from print_time import print_time
+from .ck2parser import rootpath, csv_rows, SimpleParser, Pair, Obj
+from .localpaths import eu4dir
+from .print_time import print_time
 
 def localisation():
     localisation_dict = {}

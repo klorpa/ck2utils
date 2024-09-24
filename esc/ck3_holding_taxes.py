@@ -7,8 +7,8 @@ import sys
 import PIL.Image
 import networkx
 import numpy as np
-from ck3parser import Pair, rootpath, SimpleParser, Obj, Date, Number, String, csv_rows
-from print_time import print_time
+from .ck3parser import Pair, rootpath, SimpleParser, Obj, Date, Number, String, csv_rows
+from .print_time import print_time
 
 
 EARLIEST_DATE = (float('-inf'),) * 3

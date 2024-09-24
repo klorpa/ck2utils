@@ -6,8 +6,8 @@ import pickle
 import re
 import sys
 import git
-from ck2parser import rootpath, cachedir, is_codename, SimpleParser
-from print_time import print_time
+from .ck2parser import rootpath, cachedir, is_codename, SimpleParser
+from .print_time import print_time
 
 
 parser = SimpleParser()

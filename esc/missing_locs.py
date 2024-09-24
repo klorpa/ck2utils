@@ -3,8 +3,8 @@
 from pathlib import Path
 import re
 import sys
-from ck2parser import Obj, SimpleParser, get_localisation, rootpath
-from print_time import print_time
+from .ck2parser import Obj, SimpleParser, get_localisation, rootpath
+from .print_time import print_time
 
 # auditing tool for missing localisations.
 # unfinished, stopped during societies

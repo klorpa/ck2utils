@@ -1,0 +1,47 @@
+# desires:
+# (1) make ck2utils/esc a proper package finally so it can be used outside
+#     its directory without relying on PYTHONPATH
+# (2) minimize diff to existing paths & files, just because
+# consequences:
+# (1) if >1 module, the pyproject.toml needs to be above the package, so, up here :(
+# (2) all the same-package imports had to be modified anyway
+#     (import ck2parser -> from . import ck2parser; from ck2parser -> from .ck2parser)
+#     (or, the "scripts" could have just been moved outside the package)
+#     this breaks "python script.py" but "python -m esc.script" works
+
+# package expected to be used in development mode with editable installation
+
+[project]
+name = "ck2utils-esc"
+version = "0.2.0"
+description = "Utilities for Paradox games"
+authors = [{ name = "escalonn" }]
+requires-python = ">= 3.9"
+dependencies = ["lupa", "evol"]
+
+[build-system]
+build-backend = "hatchling.build"
+requires = ["hatchling"]
+
+[tool.hatch.build]
+packages = ["esc"]
+
+[tool.pixi.project]
+channels = ["conda-forge"]
+platforms = ["win-64"]
+
+[tool.pixi.dependencies]
+funcparserlib = "*"
+gitpython = "*"
+numpy = "*"
+pillow = "*"
+intervaltree = "*"
+networkx = "*"
+matplotlib-base = "*"
+tabulate = "*"
+spectra = "*"
+
+[tool.pixi.pypi-dependencies]
+ck2utils-esc = { path = ".", editable = true }
+
+[tool.pixi.tasks]

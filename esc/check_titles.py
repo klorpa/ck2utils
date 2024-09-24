@@ -9,8 +9,7 @@ import re
 import sys
 import shutil
 import tempfile
-import ck2parser
-from ck2parser import (rootpath, vanilladir, is_codename, Obj, csv_rows,
+from .ck2parser import (rootpath, vanilladir, is_codename, Obj, csv_rows,
                        get_province_id_name_map, SimpleParser)
 from print_time import print_time
 

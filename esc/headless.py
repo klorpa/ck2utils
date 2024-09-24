@@ -6,7 +6,7 @@ import re
 import funcparserlib
 import funcparserlib.lexer
 import funcparserlib.parser
-from print_time import print_time
+from .print_time import print_time
 
 rootpath = pathlib.Path('.')
 swmhpath = rootpath / 'SWMH-BETA/SWMH'

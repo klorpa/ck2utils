@@ -2,8 +2,8 @@ from collections import defaultdict
 from textwrap import dedent
 from pathlib import Path
 import sqlite3
-from ck3parser import rootpath
-from print_time import print_time
+from .ck3parser import rootpath
+from .print_time import print_time
 
 # light compared to cmh 1.9.2r2
 #   remove MND Balance: Making empires actually work for it...

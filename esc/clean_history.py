@@ -3,9 +3,9 @@
 import csv
 import os
 import shutil
-from ck2parser import (rootpath, vanilladir, is_codename, csv_rows, files,
+from .ck2parser import (rootpath, vanilladir, is_codename, csv_rows, files,
                        SimpleParser)
-from print_time import print_time
+from .print_time import print_time
 
 @print_time
 def main():
@@ -42,7 +42,7 @@ def main():
         if len(hist) > 0:
             # if it isn't blank, but has no `title`, note it.
             if 'title' not in hist.dictionary:
-                print('WARNING: Missing title in ' + hist_name + 
+                print('WARNING: Missing title in ' + hist_name +
                       ', should probably be removed')
         else:
             # if it's blank,

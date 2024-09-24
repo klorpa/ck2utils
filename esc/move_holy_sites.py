@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 
 from collections import defaultdict
-from ck2parser import (rootpath, is_codename, get_cultures, Comment, Pair,
-                       TopLevel, SimpleParser, FullParser)
-from print_time import print_time
+from .ck2parser import (rootpath, is_codename, get_cultures, Comment, Pair,
+                        TopLevel, SimpleParser, FullParser)
+from .print_time import print_time
 
 
 @print_time

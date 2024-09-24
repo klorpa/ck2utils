@@ -5,8 +5,8 @@ import re
 import sys
 import numpy as np
 from PIL import Image
-from ck3parser import rootpath, SimpleParser
-from print_time import print_time
+from .ck3parser import rootpath, SimpleParser
+from .print_time import print_time
 
 
 def parse_default_map(default_map_path):

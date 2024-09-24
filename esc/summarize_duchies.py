@@ -2,9 +2,9 @@
 
 from collections import defaultdict, OrderedDict
 from operator import attrgetter
-from ck2parser import (rootpath, is_codename, get_localisation, SimpleParser,
-                       get_provinces)
-from print_time import print_time
+from .ck2parser import (rootpath, is_codename, get_localisation, SimpleParser,
+                        get_provinces)
+from .print_time import print_time
 
 def process_landed_titles(parser):
     titles_list = []

@@ -7,11 +7,11 @@ import re
 import shutil
 import tempfile
 import time
-from ck2parser import (rootpath, is_codename, get_province_id_name_map,
-                       get_provinces, get_localisation, get_cultures,
-                       files, prepend_post_comment, Obj, Comment, SimpleParser,
-                       FullParser)
-from print_time import print_time
+from .ck2parser import (rootpath, is_codename, get_province_id_name_map,
+                        get_provinces, get_localisation, get_cultures,
+                        files, prepend_post_comment, Obj, Comment, SimpleParser,
+                        FullParser)
+from .print_time import print_time
 
 PRUNE_BARONIES = False
 FORMAT_ONLY = False # don't alter code, just format. overrides PRUNE_BARONIES

@@ -9,9 +9,9 @@ Scans for:
 
 import pathlib
 import re
-from ck2parser import (rootpath, files, csv_rows, get_cultures, is_codename,
-                       get_localisation, SimpleParser, FullParser, NoParseError)
-from print_time import print_time
+from .ck2parser import (rootpath, files, csv_rows, get_cultures, is_codename,
+                        get_localisation, SimpleParser, FullParser, NoParseError)
+from .print_time import print_time
 
 modpath = pathlib.Path.cwd()
 

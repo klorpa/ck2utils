@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
-import ck2parser
-from print_time import print_time
+from . import ck2parser
+from .print_time import print_time
 
 @print_time
 def main():
@@ -44,4 +44,3 @@ if = {{
 
 if __name__ == '__main__':
     main()
-

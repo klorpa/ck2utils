@@ -3,8 +3,8 @@
 import collections
 import pathlib
 import sys
-from ck2parser import rootpath, get_provinces, is_codename, Obj, SimpleParser
-from print_time import print_time
+from .ck2parser import rootpath, get_provinces, is_codename, Obj, SimpleParser
+from .print_time import print_time
 
 def get_modpath():
     if len(sys.argv) <= 1:

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 import re
-from ck2parser import rootpath, is_codename, get_cultures, Pair, SimpleParser, FullParser
+from .ck2parser import rootpath, is_codename, get_cultures, Pair, SimpleParser, FullParser
 
 
 def process_title(title_pair):

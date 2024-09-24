@@ -3,7 +3,7 @@
 import math
 import random
 import numpy as np
-from print_time import print_time
+from .print_time import print_time
 
 def mtth(x):
     return random.expovariate(math.log(2) / x)

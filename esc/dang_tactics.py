@@ -3,8 +3,8 @@
 from copy import deepcopy
 import csv
 from itertools import product
-from ck2parser import rootpath, SimpleParser, FullParser, Pair, Obj, Number, Op
-from print_time import print_time
+from .ck2parser import rootpath, SimpleParser, FullParser, Pair, Obj, Number, Op
+from .print_time import print_time
 
 template = '''
 standard_skirmish_generic_neutral_tier.1_tactic = {

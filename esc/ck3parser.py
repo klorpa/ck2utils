@@ -16,7 +16,7 @@ import traceback
 from funcparserlib.lexer import make_tokenizer, Token
 from funcparserlib.parser import (some, a, maybe, many, finished, skip,
                                   oneplus, forward_decl, NoParseError)
-from localpaths import rootpath, ck3dir, ck3cachedir
+from .localpaths import rootpath, ck3dir, ck3cachedir
 
 try:
     import git

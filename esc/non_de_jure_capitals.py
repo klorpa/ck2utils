@@ -2,8 +2,8 @@
 
 from pathlib import Path
 import re
-from ck2parser import rootpath, get_provinces, SimpleParser
-from print_time import print_time
+from .ck2parser import rootpath, get_provinces, SimpleParser
+from .print_time import print_time
 
 def process_landed_titles(parser, prov_title):
     def recurse(tree):

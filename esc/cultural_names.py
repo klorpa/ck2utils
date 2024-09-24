@@ -4,8 +4,8 @@
 
 from collections import Counter
 from pprint import pprint
-from ck2parser import rootpath, SimpleParser
-from print_time import print_time
+from .ck2parser import rootpath, SimpleParser
+from .print_time import print_time
 
 @print_time
 def main():
@@ -60,4 +60,3 @@ if __name__ == '__main__':
 #  'tuscan': {False: Counter({'Nello': 2,
 #                             'Nicolò': 2,
 #                             'Neri': 2})},
-

@@ -16,8 +16,8 @@
 
 
 import re
-import ck2parser
-from print_time import print_time
+from . import ck2parser
+from .print_time import print_time
 
 
 NEW_DATA_FROM_FILE = ck2parser.rootpath / 'province_setup_data.txt'

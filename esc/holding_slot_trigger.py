@@ -6,8 +6,8 @@ import pprint
 import re
 import shutil
 import tempfile
-import ck2parser
-import print_time
+from . import ck2parser
+from . import print_time
 
 JUST_PRINT_STATS = False
 

@@ -8,8 +8,8 @@ import string
 import sys
 
 from lupa import LuaRuntime
-from ck2parser import Obj, SimpleParser
-from print_time import print_time
+from .ck2parser import Obj, SimpleParser
+from .print_time import print_time
 
 # python 3.11 for lupa for now
 # py -3.11 ck2_combat.py ../../wh-geheimnisnacht_v1.3.7.1

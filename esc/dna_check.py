@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
-from ck2parser import rootpath, SimpleParser
-from print_time import print_time
+from .ck2parser import rootpath, SimpleParser
+from .print_time import print_time
 
 @print_time
 def main():

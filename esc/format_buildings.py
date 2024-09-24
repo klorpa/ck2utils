@@ -3,8 +3,8 @@
 import pathlib
 import shutil
 import tempfile
-import ck2parser
-import print_time
+from . import ck2parser
+from . import print_time
 
 @print_time.print_time
 def main():

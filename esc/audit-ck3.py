@@ -4,7 +4,7 @@ from collections import defaultdict
 from pathlib import Path
 import re
 import sys
-from print_time import print_time
+from .print_time import print_time
 
 LINE_ENDINGS = False
 IGNORE_COMMENTS = False

@@ -2,8 +2,8 @@
 
 from collections import defaultdict
 import pprint
-import ck3parser
-from print_time import print_time
+from . import ck3parser
+from .print_time import print_time
 
 parser = ck3parser.SimpleParser()
 

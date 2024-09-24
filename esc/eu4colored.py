@@ -2,9 +2,9 @@
 
 import numpy as np
 from PIL import Image
-from ck2parser import rootpath, csv_rows, SimpleParser
-from localpaths import eu4dir
-from print_time import print_time
+from .ck2parser import rootpath, csv_rows, SimpleParser
+from .localpaths import eu4dir
+from .print_time import print_time
 
 def map(where, name='', crop=True):
     if isinstance(where, str):

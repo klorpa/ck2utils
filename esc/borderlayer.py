@@ -4,8 +4,8 @@ from pathlib import Path
 import sys
 import numpy as np
 from PIL import Image
-from ck2parser import rootpath, SimpleParser
-from print_time import print_time
+from .ck2parser import rootpath, SimpleParser
+from .print_time import print_time
 
 @print_time
 def main():

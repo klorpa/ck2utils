@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 
 import re
-from ck2parser import rootpath, SimpleParser, is_codename
-import localpaths
-from print_time import print_time
+from .ck2parser import rootpath, SimpleParser, is_codename
+from . import localpaths
+from .print_time import print_time
 
 
 @print_time

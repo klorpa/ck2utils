@@ -2,7 +2,7 @@
 
 import collections
 import csv
-import functools
+from functools import total_ordering
 import hashlib
 import operator
 import os
@@ -15,8 +15,7 @@ import traceback
 from funcparserlib.lexer import make_tokenizer, Token
 from funcparserlib.parser import (some, a, maybe, many, finished, skip,
                                   oneplus, forward_decl, NoParseError)
-from localpaths import rootpath, vanilladir, cachedir
-from functools import total_ordering
+from .localpaths import rootpath, vanilladir, cachedir
 
 try:
     import git
